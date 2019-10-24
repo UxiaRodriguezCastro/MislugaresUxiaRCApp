@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">MislugaresUxiaRCApp</string>
+
+    <string name="accion_mostrar">Mostrar</string>
+    <string name="accion_preferencias">Preferencias</string>
+    <string name="accion_acerca_de">Acerca de</string>
+    <string name="accion_salir">Salir</string>
+    <string name="etacercade">APLICACIÓN MIS LUGARES:Hola soy Uxia Rodriguez.Este programa ha sido desarrollado como ejemplo para demostrar cómo se pueden lanzar nuevas actividades desde la actividad principal.</string>
+    <string name="Preferencias_menu">Preferencias</string>
+    <string name="acercade_menu">Acerca de...</string>
+    <string name="config_menu">Configuracion</string>
+</resources>

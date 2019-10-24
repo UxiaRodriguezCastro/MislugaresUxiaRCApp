@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MyplacesUxiaRCApp</string>
+
+    <string name="accion_mostrar">Show</string>
+    <string name="accion_preferencias">Preferences</string>
+    <string name="accion_acerca_de">About</string>
+    <string name="accion_salir">Exit</string>
+    <string name="etacercade">APPLICATION MY PLACES: Hi, I\'m Uxia Rodriguez. This program has been developed as an example to demonstrate how new activities can be launched from the main activity.</string>
+    <string name="Preferencias_menu">Preferences</string>
+    <string name="acercade_menu">About</string>
+    <string name="config_menu">Configure</string>
+</resources>
