@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.dam222.mislugaresuxiarcapp">
 
-
-
     <application
         android:name=".presentacion.Aplicacion"
         android:allowBackup="true"
@@ -22,7 +20,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".presentacion.AcercadeApp"></activity>
+        <activity android:name=".presentacion.AcercadeApp" />
+        <activity android:name=".presentacion.VistaLugarActivity"></activity>
     </application>
 
 </manifest>

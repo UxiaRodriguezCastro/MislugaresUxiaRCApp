@@ -24,15 +24,16 @@ public class MainActivity extends AppCompatActivity {
     private CasoUsoLugares usoLugares;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+    /*1.- CREO LA ACTIVIDAD MAIN*/
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        usoAplicacion=new CasoUsoActividades(this);
-        usoLugares=new CasoUsoLugares(this, ((Aplicacion) getApplication()).getLugares() );
-        /*TOOLBAR*/
-        //setContentView(R.layout.activity_edicion_lugar);
+        //2.- Creamos el caso de uso Aplicacion luego paso lugares a la aplicacion
+        usoAplicacion = new CasoUsoActividades(this);
+        //3.- estructura de acces lugares
+        usoLugares = new CasoUsoLugares(this, ((Aplicacion) getApplication()).getLugares());
+    /*toolbar: recordar que es un srol activity*/
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,8 +42,8 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -83,9 +84,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void actividadPreferencias(View view){
 
-        Toast mensa = Toast.makeText(this, "Uxia Rodriguez: Opción Preferencias en construccion",
-                Toast.LENGTH_SHORT);
-        mensa.show();
+        usoAplicacion.lanzarPreferencias(null);
     };
     public void actividadVistaLugar(View view){
 

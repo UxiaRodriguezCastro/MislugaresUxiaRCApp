@@ -9,4 +9,10 @@
     <string name="Preferencias_menu">Preferencias</string>
     <string name="acercade_menu">Acerca de...</string>
     <string name="config_menu">Configuracion</string>
+    <string name="tv_direccion">Direccion</string>
+    <string name="tv_telefono">Telefono</string>
+    <string name="tv_direccionURI">Direccion URI</string>
+    <string name="tv_comentario">Comentario</string>
+    <string name="tv_fecha">Fecha</string>
+    <string name="tv_hora">Hora</string>
 </resources>
