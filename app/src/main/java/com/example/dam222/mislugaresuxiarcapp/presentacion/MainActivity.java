@@ -88,8 +88,6 @@ public class MainActivity extends AppCompatActivity {
     };
     public void actividadVistaLugar(View view){
 
-        Toast mensa = Toast.makeText(this, "Uxia Rodriguez: Opción Vista Lugar en construccion",
-                Toast.LENGTH_SHORT);
-        mensa.show();
+            usoLugares.mostrar(0);
     };
 }

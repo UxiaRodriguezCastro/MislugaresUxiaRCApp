@@ -3,7 +3,9 @@ package com.example.dam222.mislugaresuxiarcapp.casouso;
 import android.app.Activity;
 import android.content.Intent;
 
+import com.example.dam222.mislugaresuxiarcapp.modelo.Lugar;
 import com.example.dam222.mislugaresuxiarcapp.modelo.LugaresVector;
+import com.example.dam222.mislugaresuxiarcapp.presentacion.VistaLugarActivity;
 
 /**
  * Created by DAM222 on 23/10/2019.
@@ -21,8 +23,13 @@ public class CasoUsoLugares {
         this.misLugares = misLugares;
     }
     public void mostrar(int pos) {
-       /* Intent i = new Intent(actividad, VistaLugarActivity.class);
+        Intent i = new Intent(actividad, VistaLugarActivity.class);
         i.putExtra("pos", pos);
-        actividad.startActivity(i);*/
+        actividad.startActivity(i);
+    }
+
+    public Lugar retornar (int pos){
+
+        return misLugares.elemento(pos);
     }
 }

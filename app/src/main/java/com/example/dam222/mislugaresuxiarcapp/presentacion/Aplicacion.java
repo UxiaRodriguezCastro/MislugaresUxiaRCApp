@@ -17,6 +17,7 @@ public class Aplicacion extends Application {
         super.onCreate();
         SharedPreferences pref = getSharedPreferences("pref", MODE_PRIVATE);
         saldo = pref.getInt("saldo_inicial", -1);
+        misLugares = new LugaresVector();
     }
 
     public int getSaldo(){
