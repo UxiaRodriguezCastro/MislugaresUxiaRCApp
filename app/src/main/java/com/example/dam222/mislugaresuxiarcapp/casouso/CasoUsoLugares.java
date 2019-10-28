@@ -32,4 +32,10 @@ public class CasoUsoLugares {
 
         return misLugares.elemento(pos);
     }
+
+    public int numeroLugares(){
+        /*ESTA ES UNA CLASE INTERNA
+        * no debe comunicarse con el usuario*/
+        return misLugares.tamanyo();
+    }
 }

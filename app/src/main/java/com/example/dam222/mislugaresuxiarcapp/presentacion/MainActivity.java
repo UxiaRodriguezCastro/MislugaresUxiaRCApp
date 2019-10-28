@@ -1,16 +1,20 @@
 package com.example.dam222.mislugaresuxiarcapp.presentacion;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.InputType;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.dam222.mislugaresuxiarcapp.R;
@@ -87,7 +91,28 @@ public class MainActivity extends AppCompatActivity {
         usoAplicacion.lanzarPreferencias(null);
     };
     public void actividadVistaLugar(View view){
+        final EditText entrada = new EditText(this);
+        //bloqueamos a numeros
+        entrada.setInputType(InputType.TYPE_CLASS_NUMBER);
+        entrada.setText("0");
+        new AlertDialog.Builder(this)
+                .setTitle("Selección de lugar")
+                .setMessage("indica su id:")
+                .setView(entrada)
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        int id= Integer.parseInt (entrada.getText().toString());
+                        if (id<usoLugares.numeroLugares())
+                            usoLugares.mostrar(id);
+                            //desde aquí no se puede enviar un toast
+                        else{
 
-            usoLugares.mostrar(0);
-    };
+
+                        } //smsErrores("Nombre Apellido Alumno: Posicion no existe");
+                    }})
+                .setNegativeButton("Cancelar", null)
+                .show();
+    }
+
+
 }
