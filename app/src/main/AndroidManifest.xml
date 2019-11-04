@@ -21,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".presentacion.AcercadeApp" />
-        <activity android:name=".presentacion.VistaLugarActivity"></activity>
+        <activity android:name=".presentacion.VistaLugarActivity" />
+        <activity android:name=".presentacion.EdicionlugarActivity"></activity>
     </application>
 
 </manifest>

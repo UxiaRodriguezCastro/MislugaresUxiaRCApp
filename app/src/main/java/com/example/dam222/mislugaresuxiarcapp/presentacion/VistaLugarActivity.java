@@ -1,6 +1,7 @@
 package com.example.dam222.mislugaresuxiarcapp.presentacion;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +20,10 @@ import java.util.Date;
 
 public class VistaLugarActivity extends AppCompatActivity {
 
+    /*CONSTANTES*/
+    final static int RESULTADO_EDITAR=1;
+    final static int RESULTADO_GALERIA=2;
+    final static int RESULTADO_FOTO=3;
     /*COMPARTIR DATOS*/
     private CasoUsoLugares usoLugar;
     private int pos;
@@ -88,7 +93,7 @@ public class VistaLugarActivity extends AppCompatActivity {
                 llegarLugar();
                 break;
             case R.id.accion_editar:
-                editarLugar(pos);
+                editarLugar(pos,RESULTADO_EDITAR);
                 //  usoLugar.editar(pos,RESULTADO_EDITAR);
 
                 break;
@@ -103,7 +108,13 @@ public class VistaLugarActivity extends AppCompatActivity {
     }
     public void compartirLugar(){};
     public void llegarLugar(){};
-    public void editarLugar(int pos){};
+
+    public void editarLugar(int pos, int codigoSolicitud){
+
+        usoLugar.modificar( pos, codigoSolicitud);
+
+    };//fin editarlugar
+
     public void eliminarLugar(final int pos){
         new AlertDialog.Builder(this)
                 .setTitle("Borrado de lugar")
@@ -117,7 +128,7 @@ public class VistaLugarActivity extends AppCompatActivity {
                 .show();
 
 
-    }
+    }//fin eliminarlugar
 
 
 

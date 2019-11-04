@@ -5,6 +5,7 @@ import android.content.Intent;
 
 import com.example.dam222.mislugaresuxiarcapp.modelo.Lugar;
 import com.example.dam222.mislugaresuxiarcapp.modelo.LugaresVector;
+import com.example.dam222.mislugaresuxiarcapp.presentacion.EdicionlugarActivity;
 import com.example.dam222.mislugaresuxiarcapp.presentacion.VistaLugarActivity;
 
 /**
@@ -42,5 +43,10 @@ public class CasoUsoLugares {
     public void borrar(int pos) {
         misLugares.borrar(pos);
         actividad.finish();
+    }
+    public void modificar(int pos, int codigoSolicitud) {
+        Intent i = new Intent(actividad, EdicionlugarActivity.class);
+        i.putExtra("pos", pos);
+        actividad.startActivityForResult(i, codigoSolicitud);
     }
 }
