@@ -15,4 +15,7 @@
     <string name="tv_comentario">Comentario</string>
     <string name="tv_fecha">Fecha</string>
     <string name="tv_hora">Hora</string>
+    <string name="comollegar">Como llegar</string>
+    <string name="editar">Editar</string>
+    <string name="borrar">Borrar</string>
 </resources>

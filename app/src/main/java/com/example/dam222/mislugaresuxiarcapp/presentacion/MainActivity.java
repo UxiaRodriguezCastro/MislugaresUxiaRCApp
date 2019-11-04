@@ -105,14 +105,19 @@ public class MainActivity extends AppCompatActivity {
                         if (id<usoLugares.numeroLugares())
                             usoLugares.mostrar(id);
                             //desde aquí no se puede enviar un toast
-                        else{
-
-
-                        } //smsErrores("Nombre Apellido Alumno: Posicion no existe");
+                        else smsErrores("Uxia Rodriguez Castro: Posicion no existe");
                     }})
                 .setNegativeButton("Cancelar", null)
                 .show();
     }
+    public void smsErrores(String error){
+        Toast mensa = Toast.makeText(this, error,
+                Toast.LENGTH_SHORT);
+        mensa.show();
+
+    }
+
+
 
 
 }

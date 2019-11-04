@@ -1,7 +1,11 @@
 package com.example.dam222.mislugaresuxiarcapp.presentacion;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -70,4 +74,52 @@ public class VistaLugarActivity extends AppCompatActivity {
         // ponerFoto(imageView, lugar.getFoto());
         //pongo la foto que realmente tiene el lugar
     }
+    @Override public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_vista_lugar, menu);
+        return true;
+    }
+    @Override public boolean onOptionsItemSelected(MenuItem item) {
+        boolean opExito=true;
+        switch (item.getItemId()) {
+            case R.id.accion_compartir:
+                compartirLugar();
+                break;
+            case R.id.accion_llegar:
+                llegarLugar();
+                break;
+            case R.id.accion_editar:
+                editarLugar(pos);
+                //  usoLugar.editar(pos,RESULTADO_EDITAR);
+
+                break;
+            case R.id.accion_borrar:
+                eliminarLugar(pos);
+
+                break;
+            default:
+                opExito=super.onOptionsItemSelected(item);
+        }
+        return opExito;
+    }
+    public void compartirLugar(){};
+    public void llegarLugar(){};
+    public void editarLugar(int pos){};
+    public void eliminarLugar(final int pos){
+        new AlertDialog.Builder(this)
+                .setTitle("Borrado de lugar")
+                .setMessage("¿Estás seguro que quieres elminar este lugar?")
+                .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        usoLugar.borrar(pos);
+                        finish();
+                    }})
+                .setNegativeButton("Cancelar", null)
+                .show();
+
+
+    }
+
+
+
+
 }

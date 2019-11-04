@@ -38,4 +38,9 @@ public class CasoUsoLugares {
         * no debe comunicarse con el usuario*/
         return misLugares.tamanyo();
     }
+
+    public void borrar(int pos) {
+        misLugares.borrar(pos);
+        actividad.finish();
+    }
 }

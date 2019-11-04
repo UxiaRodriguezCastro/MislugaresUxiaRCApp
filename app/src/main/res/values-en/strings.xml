@@ -16,4 +16,7 @@
     <string name="tv_comentario">Comentaries</string>
     <string name="tv_fecha">Date</string>
     <string name="tv_hora">Time</string>
+    <string name="comollegar">How to go</string>
+    <string name="editar">Edit</string>
+    <string name="borrar">Delete</string>
 </resources>
