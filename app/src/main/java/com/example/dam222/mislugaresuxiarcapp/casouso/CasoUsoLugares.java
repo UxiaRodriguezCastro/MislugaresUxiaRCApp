@@ -49,4 +49,10 @@ public class CasoUsoLugares {
         i.putExtra("pos", pos);
         actividad.startActivityForResult(i, codigoSolicitud);
     }
+
+    public void guardar(int pos,Lugar lugar){
+
+        misLugares.actualiza(pos,lugar);
+
+    }
 }

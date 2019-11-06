@@ -82,7 +82,7 @@ public class VistaLugarActivity extends AppCompatActivity {
     @Override public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_vista_lugar, menu);
         return true;
-    }
+    }//fin oncreate
     @Override public boolean onOptionsItemSelected(MenuItem item) {
         boolean opExito=true;
         switch (item.getItemId()) {
@@ -105,7 +105,7 @@ public class VistaLugarActivity extends AppCompatActivity {
                 opExito=super.onOptionsItemSelected(item);
         }
         return opExito;
-    }
+    }//fin onoptions
     public void compartirLugar(){};
     public void llegarLugar(){};
 
