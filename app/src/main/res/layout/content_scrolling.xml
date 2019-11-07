@@ -19,7 +19,7 @@
             android:id="@+id/bMostrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="actividadVistaLugar"
+            android:onClick="actividadListaLugares"
             android:text="@string/accion_mostrar" />
 
         <Button

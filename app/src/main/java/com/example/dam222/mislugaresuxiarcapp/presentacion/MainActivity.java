@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
     }//fin smsErrores
 
 
-    public void  actividadListaLugares(){
+    public void  actividadListaLugares(View view){
 
 
         Intent i = new Intent(this, TipoLugarActivity.class);
