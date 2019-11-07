@@ -19,4 +19,6 @@
     <string name="comollegar">How to go</string>
     <string name="editar">Edit</string>
     <string name="borrar">Delete</string>
+    <string name="tv_tipolugar">Type of PLace</string>
+    <string name="tv_nombresdelugar">Names of the place</string>
 </resources>

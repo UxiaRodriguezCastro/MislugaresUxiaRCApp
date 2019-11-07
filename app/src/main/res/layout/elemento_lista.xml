@@ -10,14 +10,17 @@
         android:layout_alignParentLeft="true"
         android:contentDescription="fotografía"
         android:src="@drawable/bar"/>
-    <TextView android:id="@+id/nombre"
+
+    <TextView
+        android:id="@+id/nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Nombres del lugar"
-        android:layout_toRightOf="@id/foto"
         android:layout_alignParentTop="true"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:singleLine="true" />
+        android:layout_toRightOf="@id/foto"
+        android:singleLine="true"
+        android:text="@string/tv_nombresdelugar"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
     <TextView
         android:id="@+id/direccion"
         android:layout_width="match_parent"
@@ -26,7 +29,7 @@
         android:layout_toRightOf="@+id/foto"
         android:gravity="center"
         android:singleLine="true"
-        android:text="dirección del lugar"/>
+        android:text="@string/tv_direccion" />
     <RatingBar
         android:id="@+id/valoracion"
         android:layout_width="wrap_content"

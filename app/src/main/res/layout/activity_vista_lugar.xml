@@ -25,13 +25,14 @@
                 android:layout_height="40dp"
                 android:contentDescription="logo del tipo"
                 android:src="@drawable/otros" />
+
             <TextView
                 android:id="@+id/tipo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="tipo del lugar" />
+                android:text="@string/tv_tipolugar"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
         <!-- INICIO codigo añadido-->
         <LinearLayout
@@ -44,13 +45,15 @@
                 android:layout_height="40dp"
                 android:contentDescription="logo de direccion"
                 android:src="@android:drawable/ic_menu_myplaces" />
+
             <TextView
                 android:id="@+id/direccion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:hint="@string/tv_direccion" />
+                android:hint="@string/tv_direccion"
+                android:text="@string/tv_direccion"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -62,13 +65,15 @@
                 android:layout_height="40dp"
                 android:contentDescription="logo de telefono"
                 android:src="@android:drawable/ic_menu_call" />
+
             <TextView
                 android:id="@+id/telefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:hint="@string/tv_telefono"/>
+                android:hint="@string/tv_telefono"
+                android:text="@string/tv_telefono"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -80,13 +85,15 @@
                 android:layout_height="40dp"
                 android:contentDescription="logo url"
                 android:src="@android:drawable/ic_menu_mapmode" />
+
             <TextView
                 android:id="@+id/url"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:hint="@string/tv_direccionURI" />
+                android:hint="@string/tv_direccionURI"
+                android:text="@string/tv_direccionURI"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,13 +105,15 @@
                 android:layout_height="40dp"
                 android:contentDescription="logo comentario"
                 android:src="@android:drawable/ic_menu_info_details" />
+
             <TextView
                 android:id="@+id/comentario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:hint="@string/tv_comentario" />
+                android:hint="@string/tv_comentario"
+                android:text="@string/tv_comentario"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -116,13 +125,15 @@
                 android:layout_height="40dp"
                 android:contentDescription="logo de direccion"
                 android:src="@android:drawable/ic_menu_my_calendar" />
+
             <TextView
                 android:id="@+id/fecha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:hint="@string/tv_fecha" />
+                android:hint="@string/tv_fecha"
+                android:text="@string/tv_fecha"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -134,13 +145,15 @@
                 android:layout_height="40dp"
                 android:contentDescription="logo de direccion"
                 android:src="@android:drawable/ic_menu_recent_history" />
+
             <TextView
                 android:id="@+id/hora"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:textAppearance="?android:attr/textAppearanceMedium"
-                android:hint="@string/tv_hora" />
+                android:hint="@string/tv_hora"
+                android:text="@string/tv_hora"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
         </LinearLayout>
         <!-- codigo añadido-->
         <RatingBar
