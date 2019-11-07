@@ -27,7 +27,7 @@ public class CasoUsoLugares {
         Intent i = new Intent(actividad, VistaLugarActivity.class);
         i.putExtra("pos", pos);
         actividad.startActivity(i);
-    }
+    }//fin mostrar
 
     public Lugar retornar (int pos){
 
@@ -43,16 +43,16 @@ public class CasoUsoLugares {
     public void borrar(int pos) {
         misLugares.borrar(pos);
         actividad.finish();
-    }
+    }//fin borrar
     public void modificar(int pos, int codigoSolicitud) {
         Intent i = new Intent(actividad, EdicionlugarActivity.class);
         i.putExtra("pos", pos);
         actividad.startActivityForResult(i, codigoSolicitud);
-    }
+    }//fin modificar
 
     public void guardar(int pos,Lugar lugar){
 
         misLugares.actualiza(pos,lugar);
 
-    }
+    }//fin guardar
 }

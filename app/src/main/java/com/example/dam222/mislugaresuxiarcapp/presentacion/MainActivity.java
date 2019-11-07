@@ -109,13 +109,13 @@ public class MainActivity extends AppCompatActivity {
                     }})
                 .setNegativeButton("Cancelar", null)
                 .show();
-    }
+    }//fin actividad vistas
     public void smsErrores(String error){
         Toast mensa = Toast.makeText(this, error,
                 Toast.LENGTH_SHORT);
         mensa.show();
 
-    }
+    }//fin smsErrores
 
 
 

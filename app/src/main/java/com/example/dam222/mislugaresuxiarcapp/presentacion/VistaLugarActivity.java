@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.dam222.mislugaresuxiarcapp.R;
 import com.example.dam222.mislugaresuxiarcapp.casouso.CasoUsoLugares;
@@ -41,7 +42,7 @@ public class VistaLugarActivity extends AppCompatActivity {
         //recuperar la posicion pos
         lugar=usoLugar.retornar(pos);//lugar sobre el que se esta trabajando
         actualizaVistas();
-    }
+    }//fin oncreate
     public void actualizaVistas() {
         ImageView imageView= (ImageView) findViewById(R.id.foto);
         //imageView esta inicializada a la foto de res
@@ -78,7 +79,7 @@ public class VistaLugarActivity extends AppCompatActivity {
 
         // ponerFoto(imageView, lugar.getFoto());
         //pongo la foto que realmente tiene el lugar
-    }
+    }//fin actualizar vistas
     @Override public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_vista_lugar, menu);
         return true;
@@ -130,7 +131,34 @@ public class VistaLugarActivity extends AppCompatActivity {
 
     }//fin eliminarlugar
 
+    @Override protected void onActivityResult(int requestCode, int resultCode,
+                                              Intent data) {
+        /***************
+         * Una vez regresamos de la actividad EdicionLugarActivity
+         * lo que hacemos es actualizar los valores de las vistas y
+         * forzar al sistema a que repinte la vista con id scrollView1.
+         * Esta vista corresponde al ScrollView que contiene todo el LAYOUT
+         */
 
+        super.onActivityResult(requestCode, resultCode, data);
+
+        switch (requestCode){
+
+            case RESULTADO_EDITAR:
+                actualizaVistas();
+                findViewById(R.id.scrollView1).invalidate();
+                break;
+            case RESULTADO_GALERIA:
+                break;
+
+            case RESULTADO_FOTO:
+                break;
+            default:  Toast.makeText(this, "Error fatal del menu", Toast.LENGTH_LONG).show();
+
+
+
+        }
+    }// fin de on activity
 
 
 }

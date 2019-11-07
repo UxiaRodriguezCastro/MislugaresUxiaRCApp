@@ -91,6 +91,7 @@ public class EdicionlugarActivity extends AppCompatActivity {
             case R.id.accion_guardar:
                 modificarVista();
                 usoLugar.guardar(pos,lugar);
+
                 finish();
            break;
             case R.id.accion_cancelar:
@@ -99,7 +100,7 @@ public class EdicionlugarActivity extends AppCompatActivity {
                 opExito=super.onOptionsItemSelected(item);
         }
         return opExito;
-    }//finonoptions
+    }//fin onoptions
 
     public void modificarVista(){
 
@@ -114,4 +115,8 @@ public class EdicionlugarActivity extends AppCompatActivity {
 
 
     }//fin modificar vista
+
+
+
+
 }

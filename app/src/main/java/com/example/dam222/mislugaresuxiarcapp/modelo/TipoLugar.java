@@ -39,6 +39,6 @@ public enum TipoLugar {
             resultado[tipo.ordinal()] = tipo.texto;
         }
         return resultado;
-    }
+    }//fin getnombres
 
 }
