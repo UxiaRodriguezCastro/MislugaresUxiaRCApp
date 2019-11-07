@@ -110,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
                 .setNegativeButton("Cancelar", null)
                 .show();
     }//fin actividad vistas
+
     public void smsErrores(String error){
         Toast mensa = Toast.makeText(this, error,
                 Toast.LENGTH_SHORT);
@@ -118,6 +119,13 @@ public class MainActivity extends AppCompatActivity {
     }//fin smsErrores
 
 
+    public void  actividadListaLugares(){
 
+
+        Intent i = new Intent(this, TipoLugarActivity.class);
+        this.startActivity(i);
+
+
+    }
 
 }
