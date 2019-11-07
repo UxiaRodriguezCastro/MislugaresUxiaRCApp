@@ -22,7 +22,8 @@
         </activity>
         <activity android:name=".presentacion.AcercadeApp" />
         <activity android:name=".presentacion.VistaLugarActivity" />
-        <activity android:name=".presentacion.EdicionlugarActivity"></activity>
+        <activity android:name=".presentacion.EdicionlugarActivity"/>
+        <activity android:name=".presentacion.TipoLugarActivity"/>
     </application>
 
 </manifest>

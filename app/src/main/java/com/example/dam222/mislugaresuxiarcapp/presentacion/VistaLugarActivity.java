@@ -138,7 +138,7 @@ public class VistaLugarActivity extends AppCompatActivity {
          * lo que hacemos es actualizar los valores de las vistas y
          * forzar al sistema a que repinte la vista con id scrollView1.
          * Esta vista corresponde al ScrollView que contiene todo el LAYOUT
-         */
+         * */
 
         super.onActivityResult(requestCode, resultCode, data);
 
