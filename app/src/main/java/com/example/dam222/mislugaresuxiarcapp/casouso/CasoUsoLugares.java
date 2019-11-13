@@ -55,4 +55,8 @@ public class CasoUsoLugares {
         misLugares.actualiza(pos,lugar);
 
     }//fin guardar
+
+    public void cancelar() {
+        actividad.finish();
+    }
 }

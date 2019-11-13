@@ -95,6 +95,7 @@ public class EdicionlugarActivity extends AppCompatActivity {
                 finish();
            break;
             case R.id.accion_cancelar:
+                usoLugar.cancelar();
                 break;
             default:
                 opExito=super.onOptionsItemSelected(item);
