@@ -20,5 +20,9 @@
     <string name="editar">Edit</string>
     <string name="borrar">Delete</string>
     <string name="tv_tipolugar">Type of PLace</string>
-    <string name="tv_nombresdelugar">Names of the place</string>
+    <string name="tv_nombresdelugar">Name of the place</string>
+    <string name="algoqueidentifiquetb">Something that identificates the place</string>
+    <string name="direcionlugartb">Addres od the place</string>
+    <string name="paginawebtb">website</string>
+    <string name="introducetusnotastb">introduce your notes</string>
 </resources>

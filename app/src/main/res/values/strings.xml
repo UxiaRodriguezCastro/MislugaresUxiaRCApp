@@ -19,5 +19,9 @@
     <string name="editar">Editar</string>
     <string name="borrar">Borrar</string>
     <string name="tv_tipolugar">Tipo Lugar</string>
-    <string name="tv_nombresdelugar">Nombres del lugar</string>
+    <string name="tv_nombresdelugar">Nombre del lugar</string>
+    <string name="algoqueidentifiquetb">algo que identifique el lugar</string>
+    <string name="direcionlugartb">dirección del lugar</string>
+    <string name="paginawebtb">página web</string>
+    <string name="introducetusnotastb">introduce tus notas</string>
 </resources>
