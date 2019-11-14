@@ -184,6 +184,7 @@
                     android:contentDescription="logo cámara"
                     android:onClick="tomarFoto"
                     android:src="@android:drawable/ic_menu_camera" />
+
                 <ImageView
                     android:id="@+id/galeria"
                     android:layout_width="40dp"

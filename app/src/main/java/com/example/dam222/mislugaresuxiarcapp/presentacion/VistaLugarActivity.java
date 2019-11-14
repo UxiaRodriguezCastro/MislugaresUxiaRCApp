@@ -1,12 +1,15 @@
 package com.example.dam222.mislugaresuxiarcapp.presentacion;
 
+import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -29,6 +32,11 @@ public class VistaLugarActivity extends AppCompatActivity {
     private CasoUsoLugares usoLugar;
     private int pos;
     private Lugar lugar;
+
+    /*Elementos de la interfaz*/
+
+    ImageView imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +52,7 @@ public class VistaLugarActivity extends AppCompatActivity {
         actualizaVistas();
     }//fin oncreate
     public void actualizaVistas() {
-        ImageView imageView= (ImageView) findViewById(R.id.foto);
+         imageView= (ImageView) findViewById(R.id.foto);
         //imageView esta inicializada a la foto de res
         TextView nombre = findViewById(R.id.nombre);
         nombre.setText(lugar.getNombre());
@@ -149,7 +157,16 @@ public class VistaLugarActivity extends AppCompatActivity {
                 findViewById(R.id.scrollView1).invalidate();
                 break;
             case RESULTADO_GALERIA:
+
+                    if (resultCode == Activity.RESULT_OK) {
+                        lugar.setFoto(data.getDataString());
+                        ponerFoto( lugar.getFoto());
+                    } else {
+                        Toast.makeText(this, "Foto no cargada", Toast.LENGTH_LONG).show();
+                    }
+
                 break;
+
 
             case RESULTADO_FOTO:
                 break;
@@ -159,6 +176,24 @@ public class VistaLugarActivity extends AppCompatActivity {
 
         }
     }// fin de on activity
+
+    	public void galeria(View view) {
+
+        //Intent intent = new Intent(Intent.ACTION_PICK, /*Acceso denegado*/  //funciona siempre que no se pase de una actividad a otra la imagen, tiempo de accceso muy corto/limitado
+        Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT,//tratandolo como un documento nos permite tratarlo perfectamente sin errores por un tiempo de acceso limitado
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(intent, RESULTADO_GALERIA);
+
+    }// fin de galeria
+
+    protected void ponerFoto(String uriFoto) {
+        imageView= (ImageView) findViewById(R.id.foto);
+        if (uriFoto != null && !uriFoto.isEmpty() && !uriFoto.equals("null")) {
+            imageView.setImageURI(Uri.parse(uriFoto));
+        } else{
+            imageView.setImageBitmap(null);
+        }
+    }//fin poner foto
 
 
 }
