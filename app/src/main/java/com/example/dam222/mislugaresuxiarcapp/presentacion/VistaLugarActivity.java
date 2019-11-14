@@ -83,10 +83,13 @@ public class VistaLugarActivity extends AppCompatActivity {
                         lugar.setValoracion(valor);
                     }
                 });
-        //imageView.setImageDrawable(lugar.getFoto());
+        if (lugar.getFoto()!= null && !lugar.getFoto().isEmpty() && !lugar.getFoto().equals("null")) {
 
-        // ponerFoto(imageView, lugar.getFoto());
-        //pongo la foto que realmente tiene el lugar
+
+            ponerFoto(lugar.getFoto());
+            //pongo la foto que realmente tiene el lugar
+        }
+
     }//fin actualizar vistas
     @Override public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_vista_lugar, menu);
