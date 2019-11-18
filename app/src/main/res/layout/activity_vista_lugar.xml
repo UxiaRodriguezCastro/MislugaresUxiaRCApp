@@ -177,6 +177,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right" >
+
                 <ImageView
                     android:id="@+id/camara"
                     android:layout_width="40dp"
@@ -192,6 +193,7 @@
                     android:contentDescription="logo galeria"
                     android:onClick="galeria"
                     android:src="@android:drawable/ic_menu_gallery" />
+
                 <ImageView
                     android:id="@+id/borrraFoto"
                     android:layout_width="40dp"

@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Environment;
+import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,6 +21,7 @@ import com.example.dam222.mislugaresuxiarcapp.R;
 import com.example.dam222.mislugaresuxiarcapp.casouso.CasoUsoLugares;
 import com.example.dam222.mislugaresuxiarcapp.modelo.Lugar;
 
+import java.io.File;
 import java.text.DateFormat;
 import java.util.Date;
 
@@ -36,6 +39,7 @@ public class VistaLugarActivity extends AppCompatActivity {
     /*Elementos de la interfaz*/
 
     ImageView imageView;
+    private Uri uriFoto;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -198,5 +202,20 @@ public class VistaLugarActivity extends AppCompatActivity {
         }
     }//fin poner foto
 
+ 	public void tomarFoto(View view) {
+    Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+    uriFoto = Uri.fromFile(new File(
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES)+File.separator
+                            +"img_" + (System.currentTimeMillis() / 1000) + ".jpg"));
+
+    intent.putExtra(MediaStore.EXTRA_OUTPUT, uriFoto);
+    startActivityForResult(intent, RESULTADO_FOTO);
+
+    }//fin tomar foto
+    public void eliminarFoto(View view) {
+        lugar.setFoto(null);
+        ponerFoto(null);
+        actualizaVistas();
+    }//fin eliminar foto
 
 }
