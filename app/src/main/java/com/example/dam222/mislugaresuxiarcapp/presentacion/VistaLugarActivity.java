@@ -93,13 +93,13 @@ public class VistaLugarActivity extends AppCompatActivity {
                         lugar.setValoracion(valor);
                     }
                 });
-        if (lugar.getFoto()!= null && !lugar.getFoto().isEmpty() && !lugar.getFoto().equals("null")) {
+        //if (lugar.getFoto()!= null && !lugar.getFoto().isEmpty() && !lugar.getFoto().equals("null")) {
 
 
             ponerFoto(lugar.getFoto());
             //pongo la foto que realmente tiene el lugar
 
-        }
+        //}
 
     }//fin actualizar vistas
     @Override public boolean onCreateOptionsMenu(Menu menu) {
@@ -231,9 +231,20 @@ public class VistaLugarActivity extends AppCompatActivity {
 
     }//fin tomar foto
     public void eliminarFoto(View view) {
+        if(uriFoto==null){
+
+            smsErrores("Foto eliminada");
+        }
+
         lugar.setFoto(null);
         ponerFoto(null);
         actualizaVistas();
     }//fin eliminar foto
 
+    public void smsErrores(String error){
+        Toast mensa = Toast.makeText(this, error,
+                Toast.LENGTH_SHORT);
+        mensa.show();
+
+    }//fin smsErrores
 }
