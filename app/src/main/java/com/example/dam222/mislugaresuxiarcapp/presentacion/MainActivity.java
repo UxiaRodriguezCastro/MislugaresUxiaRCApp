@@ -2,6 +2,7 @@ package com.example.dam222.mislugaresuxiarcapp.presentacion;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -48,6 +49,9 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
+        //mp = MediaPlayer.create(this, R.raw.audio);
+        mp.start();
+
     }
 
 
@@ -135,15 +139,17 @@ public class MainActivity extends AppCompatActivity {
        // Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show();
     //}
 
-    //@Override protected void onResume() {
-    //    super.onResume();
-     //   Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
-    //}
+    @Override protected void onResume() {
+      super.onResume();
+       Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
+        mp.start();
+    }
 
-    //@Override protected void onPause() {
-       // Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
-     //   super.onPause();
-    //}
+    @Override protected void onPause() {
+        Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
+        mp.pause();
+        super.onPause();
+    }
 
     //@Override protected void onStop() {
       //  Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
@@ -156,9 +162,8 @@ public class MainActivity extends AppCompatActivity {
     //}
 
     //@Override protected void onDestroy() {
-      //  Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
+    //   Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
       //  super.onDestroy();
     //}
-
-
+    MediaPlayer mp;
 }
