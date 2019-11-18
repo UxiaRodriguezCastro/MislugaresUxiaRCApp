@@ -5,6 +5,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Environment;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -44,6 +45,11 @@ public class VistaLugarActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        //para permitir acceso a camara
+        StrictMode.VmPolicy.Builder builder = new StrictMode.VmPolicy.Builder();
+        StrictMode.setVmPolicy(builder.build());
+
         setContentView(R.layout.activity_vista_lugar);
        //recuperar la posicion a visualizar
         Bundle extras = getIntent().getExtras();
@@ -92,6 +98,7 @@ public class VistaLugarActivity extends AppCompatActivity {
 
             ponerFoto(lugar.getFoto());
             //pongo la foto que realmente tiene el lugar
+
         }
 
     }//fin actualizar vistas
@@ -176,6 +183,17 @@ public class VistaLugarActivity extends AppCompatActivity {
 
 
             case RESULTADO_FOTO:
+                if (  resultCode == Activity.RESULT_OK && lugar!=null&& uriFoto!=null)
+                {
+
+                    lugar.setFoto(uriFoto.toString());
+                    ponerFoto(lugar.getFoto());
+
+                }
+                else{
+
+                    Toast.makeText(this, "Error en captura", Toast.LENGTH_LONG).show();
+                }
                 break;
             default:  Toast.makeText(this, "Error fatal del menu", Toast.LENGTH_LONG).show();
 
