@@ -23,6 +23,8 @@ import com.example.dam222.mislugaresuxiarcapp.casouso.CasoUsoActividades;
 import com.example.dam222.mislugaresuxiarcapp.casouso.CasoUsoLugares;
 import com.example.dam222.mislugaresuxiarcapp.presentacion.AcercadeApp;
 
+import java.io.IOException;
+
 public class MainActivity extends AppCompatActivity {
 
     private CasoUsoActividades usoAplicacion;
@@ -49,8 +51,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         Toast.makeText(this, "onCreate", Toast.LENGTH_SHORT).show();
-        //mp = MediaPlayer.create(this, R.raw.audio);
-        mp.start();
+        mp = MediaPlayer.create(this, R.raw.audio);
+
 
     }
 
@@ -138,32 +140,62 @@ public class MainActivity extends AppCompatActivity {
         //super.onStart();
        // Toast.makeText(this, "onStart", Toast.LENGTH_SHORT).show();
     //}
-
+    int pos;
     @Override protected void onResume() {
       super.onResume();
        Toast.makeText(this, "onResume", Toast.LENGTH_SHORT).show();
+
+
+
+
+
         mp.start();
+
     }
 
     @Override protected void onPause() {
+
         Toast.makeText(this, "onPause", Toast.LENGTH_SHORT).show();
-        mp.pause();
+
+        //pos = mp.getCurrentPosition();
+
+
+        //mp.start();
         super.onPause();
     }
 
-    //@Override protected void onStop() {
-      //  Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
-      //  super.onStop();
-    //}
+    @Override protected void onStop() {
+        Toast.makeText(this, "onStop", Toast.LENGTH_SHORT).show();
+        //mp.pause();
+        //pos = mp.getCurrentPosition();
+        mp.stop();
+        super.onStop();
+    }
 
-    //@Override protected void onRestart() {
-     //   super.onRestart();
-     //   Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
-    //}
+    @Override protected void onRestart() {
+        super.onRestart();
+        Toast.makeText(this, "onRestart", Toast.LENGTH_SHORT).show();
+    }
 
-    //@Override protected void onDestroy() {
-    //   Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
-      //  super.onDestroy();
-    //}
+    @Override protected void onDestroy() {
+        //pos = mp.getCurrentPosition();
+       Toast.makeText(this, "onDestroy", Toast.LENGTH_SHORT).show();
+        super.onDestroy();
+    }
+    @Override protected void onSaveInstanceState(Bundle estadoGuardado){
+        super.onSaveInstanceState(estadoGuardado);
+        if (mp != null) {
+            int pos = mp.getCurrentPosition();
+            estadoGuardado.putInt("posicion", pos);
+        }
+    }
+
+    @Override protected void onRestoreInstanceState(Bundle estadoGuardado){
+        super.onRestoreInstanceState(estadoGuardado);
+        if (estadoGuardado != null && mp != null) {
+            int pos = estadoGuardado.getInt("posicion");
+            mp.seekTo(pos);
+        }
+    }
     MediaPlayer mp;
 }
